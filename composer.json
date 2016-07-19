@@ -1,6 +1,6 @@
 {
-    "name": "bitgo/bitgo-php-sdk",
-    "description": "An SDK in PHP for using the BitGo functionality.",
+    "name": "bitgo/express-php-sdk",
+    "description": "PHP SDK for BitGo Express",
     "authors": [
         {
             "name": "Arik Sosman",
