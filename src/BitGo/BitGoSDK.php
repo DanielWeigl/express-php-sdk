@@ -14,6 +14,7 @@ class BitGoSDK {
 
 	private $_token = null;
 
+	private $_blockchain;
 	private $_keychains;
 	private $_eth;
 	private $_wallets;
@@ -36,6 +37,7 @@ class BitGoSDK {
 
 		$this->_baseURL = $domain . ':' . $port;
 
+		$this->_blockchain = new Blockchain($this);
 		$this->_keychains = new Keychains($this);
 		$this->_eth = new Ethereum($this);
 		$this->_wallets = new Wallets($this);
@@ -194,6 +196,14 @@ class BitGoSDK {
 	public function lock() {
 		$this->assertAuthenticated();
 		return $this->post('user/lock');
+	}
+
+	/**
+	 * Get blockchain utility object
+	 * @return Blockchain
+	 */
+	public function blockchain(){
+		return $this->_blockchain;
 	}
 
 	/**
